@@ -1,27 +1,45 @@
+/* General Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #aaa;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
+    background-color: #000;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom: 1px solid #333;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
+.logo a {
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -31,17 +49,11 @@ nav {
 }
 
 .nav-links li {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ddd;
+    font-size: 1.1rem;
 }
 
 .burger {
@@ -51,65 +63,168 @@ nav {
 
 .burger div {
     width: 25px;
-    height: 3px;
-    background-color: white;
+    height: 2px;
+    background-color: #fff;
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-#about {
-    height: 90vh;
+/* Home Page */
+#home {
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.about-container h1 {
+.home-container h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.home-container p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* About Page */
+#about-page {
+    padding: 4rem 2rem;
+}
+
+.about-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-page-container h2 {
     font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-#projects {
-    padding: 2rem;
+.about-page-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
-.projects-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* Skills Page */
+#skills-page {
+    padding: 4rem 2rem;
+}
+
+.skills-page-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-page-container h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Page */
+#projects-page {
+    padding: 4rem 2rem;
+}
+
+.projects-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-page-container h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
-    background-color: white;
+    background-color: #111;
+    border: 1px solid #333;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem;
-    margin: 1rem;
-    width: 300px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
 }
 
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-links a {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #333;
-    color: white;
+    border-top: 1px solid #333;
 }
 
-footer a {
-    color: white;
-}
-
+/* Responsive */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
         right: 0;
         height: 92vh;
         top: 8vh;
-        background-color: #333;
+        background-color: #000;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 100%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
@@ -120,6 +235,10 @@ footer a {
 
     .burger {
         display: block;
+    }
+
+    .home-container h1 {
+        font-size: 3rem;
     }
 }
 
